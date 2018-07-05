@@ -1,5 +1,7 @@
 package com.spring.application.model;
 
+import java.util.Optional;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,6 +9,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
+
+@Component
 @Entity
 @Table(name = "student")
 public class Student {
@@ -22,7 +27,7 @@ public class Student {
 	@JoinColumn(name = "id_teacher")
 	private Teacher teacher;
 
-	protected Student() {
+	public Student() {
 	}
  
 	public Student(int id, String name) {
@@ -35,11 +40,11 @@ public class Student {
 		return String.format("Student[studnetId=%d, studentName='%s', teacherName ='%s']", studentid, studentName, teacher.getTeacherName());
 	}
 
-	public int getStudentid() {
+	public int getStudentId() {
 		return studentid;
 	}
 
-	public void setStudentid(int studentid) {
+	public void setStudentId(int studentid) {
 		this.studentid = studentid;
 	}
 
@@ -51,12 +56,16 @@ public class Student {
 		this.studentName = studentName;
 	}
 
-	public Teacher getTeacher() {
-		return teacher;
+	public String getTeacher() {
+		return teacher.getTeacherName();
 	}
 
 	public void setTeacher(Teacher teacher) {
 		this.teacher = teacher;
 	}
+
+	 
+
+	 
 	
 }

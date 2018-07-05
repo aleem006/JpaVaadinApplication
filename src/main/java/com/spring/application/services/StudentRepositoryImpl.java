@@ -19,13 +19,9 @@ public class StudentRepositoryImpl {
 	StudentRepository studentRepo;
 	
 	@Autowired
-	TeacherRepository teacherRepository;
+	TeacherRepository teacherRepo;
 	
-	public Optional<Student> findStudentById(int id) {
-		return studentRepo.findById(id);
-	}
-	
-	public void findAllStudents() {
+	public List<Student> findAllStudents() {
 		
 		List<Student> students = studentRepo.findAll();
 		System.out.println("Students List: => ");
@@ -33,25 +29,16 @@ public class StudentRepositoryImpl {
         {
             System.out.println(student);
         }
+		return students;
         
 	}
 	
-	
-	public void createStudent() {
-		
-		Teacher teacher = new Teacher(23,"Sir");
-		teacherRepository.save(teacher);
-	    	Student student = new Student(12,"Aamir");
-	    	Student student1 = new Student(13,"ali");
-	    	student.setTeacher(teacher);
-	    	studentRepo.save(student);
-	    	student1.setTeacher(teacher);
-	    	studentRepo.save(student1);
-	    	
+	public void createStudent(Student entity) {
+
 	}
 	
 	public void deleteStudent() {
-		studentRepo.deleteById(12);
+
 	}
-	
+
 }

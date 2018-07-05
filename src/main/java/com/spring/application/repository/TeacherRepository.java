@@ -7,5 +7,5 @@ import com.spring.application.model.Teacher;
 
 @Repository
 public interface TeacherRepository extends JpaRepository<Teacher, Integer>{
-
+	public Teacher findByteacherName(String teacherName);
 }

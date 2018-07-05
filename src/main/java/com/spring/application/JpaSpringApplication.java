@@ -3,6 +3,8 @@ package com.spring.application;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.Entity;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -23,6 +25,7 @@ public class JpaSpringApplication implements CommandLineRunner{
 	
 	@Autowired
 	TeacherRepository teacherRepo;
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(JpaSpringApplication.class, args);
@@ -32,9 +35,9 @@ public class JpaSpringApplication implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 			
         
-        	studentRepositoryImpl.createStudent();
-    		studentRepositoryImpl.deleteStudent();
-		studentRepositoryImpl.findAllStudents();
+//        	studentRepositoryImpl.createStudent();
+//    		studentRepositoryImpl.deleteStudent();
+//		studentRepositoryImpl.findAllStudents();
 
      }
 	

@@ -23,7 +23,7 @@ public class Teacher {
 	@OneToMany(mappedBy = "teacher")
 	private List<Student> students = new ArrayList<>();
 	
-	protected Teacher() {
+	public Teacher() {
 	}
  
 	public Teacher(int id, String name) {
